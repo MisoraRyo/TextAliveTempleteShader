@@ -1,8 +1,9 @@
 # TextAlive Templete Ver 0.1
 
-私的に使っているTextAlive APP開発用のベースプロジェクトファイル_Ver0.1
+私的に使っているTextAlive APP開発用のベースプロジェクトファイル_Ver0.1B
 
 正常に実行するにはTextAliveのトークンが必要です。
+Shaderを開発する用のテンプレート
 
 <img src="./static/image.png" width="100%"/>
 
