@@ -25,13 +25,9 @@ varying vec2 vUv;
 
 void main()
 {
-  //gl_FragCoord_
 
   vec4 disp = texture2D(udisplayment, vUv);
   float alpha = disp.r * 0.2 + disp.g * 0.7 + disp.b * 0.1;
-  
-  //if (alpha > .9 ) {
-    
   vec2 p = ( 2.0 * gl_FragCoord.xy - resolution ) / max(resolution.x,resolution.y);
 
   for(int i=1;i<complexity;i++)
@@ -45,33 +41,13 @@ void main()
   vec3 col = vec3(
     color_intensity*sin(1.0*p.x)+color_intensity,
     color_intensity*sin(3.0*p.y)+color_intensity,
-    //1.0,
-    //1.0,
     0.0
-    //color_intensity*sin(p.x+p.y)+color_intensity
-    //color_intensity*sin(p.x+p.y)+color_intensity
   );
 
   float grayColor = dot(col.rgb, monochromeScale);
   vec3 Finalcolor = vec3(grayColor) * vec3(1.0,1.0,1.0);
-  /*
-  vec2 vUv2 = vUv;
-  vUv2.x = floor(vUv2.x * resolution.x / fMosaicScale) / (resolution.x / fMosaicScale) + (fMosaicScale / 2.0) / resolution.x;
-  vUv2.y = floor(vUv2.y * resolution.y / fMosaicScale) / (resolution.y / fMosaicScale) + (fMosaicScale / 2.0) / resolution.y;
-  */
 
-  //vec4 color = texture2D(grayColor, vUv2);
-  //float alpha = Finalcolor.r * 0.2 + Finalcolor.g * 0.7 + Finalcolor.b * 0.1;
-
-  //gl_FragColor = vec4(Finalcolor, 1.0);
 
   gl_FragColor = vec4(vec3(1.0,1.0,1.0) - col, 1.0);
 
-  /*}else{
-
-    discard;
-
-  }*/
-
-  
 }
