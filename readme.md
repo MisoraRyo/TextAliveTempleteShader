@@ -5,6 +5,8 @@
 正常に実行するにはTextAliveのトークンが必要です。
 Shaderを開発する用のテンプレート
 
+開発者用のコンソールに、positionと歌詞が表示されるものです。
+
 <img src="./static/image.png" width="100%"/>
 
 # Getting Started
