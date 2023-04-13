@@ -395,7 +395,7 @@ const geometry = new THREE.PlaneGeometry(2, 2);//
 const material = new THREE.ShaderMaterial({
   uniforms : { 
     uPixelRation : {value:PixelRation},
-    resolution: {value: new THREE.Vector2(window.innerWidth, window.innerHeight)},
+    uResolution: {value: new THREE.Vector2(window.innerWidth, window.innerHeight)},
     uTime: { value: 1.0},//hover時に変化させる値
     uCount: { value:Math.random()},
     //udisplayment: {value:new THREE.TextureLoader().load("cover2.png")},
