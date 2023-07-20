@@ -343,7 +343,7 @@ const camera = new THREE.OrthographicCamera( cameraParam.left, cameraParam.right
 );
 */
 
-const camera = new THREE.PerspectiveCamera(50, window.innerWidth / window.innerHeight, 0.1, 1000)
+const camera = new THREE.PerspectiveCamera(50, window.innerWidth / window.innerHeight, 1, 1000)
 
 camera.position.set(0.0, 0.0, 10.0);
 scene.add(camera)
