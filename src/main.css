@@ -4,3 +4,6 @@ body, html {
 	overscroll-behavior: none;
 	overflow: hidden;
 }
+canvas{
+	vertical-align: bottom;
+}
