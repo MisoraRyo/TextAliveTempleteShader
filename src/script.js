@@ -328,8 +328,8 @@ stats
 stats.showPanel(0); // 0: fps, 1: ms, 2: mb, 3+: custom
 document.body.appendChild(stats.dom);
 Object.assign(stats.dom.style, {'position': 'fixed','height': 'max-content',
-  'left': 'auto','right': '0',
-  'top': '0','bottom': 'auto'
+  'left': '0','right': 'auto',
+  'top': 'auto','bottom': '0'
 });
 
 /////////////////////////////////////////////////////////////////////////
