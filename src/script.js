@@ -365,7 +365,7 @@ const gridHelperB = new THREE.GridHelper( size, divisions );
 gridHelperB.position.set(0.0, -10.0, 0);
 scene.add( gridHelperB );
 
-const axesHelper = new THREE.AxesHelper(180);
+const axesHelper = new THREE.AxesHelper(10);
 scene.add(axesHelper);
 
 ////////////////////////////////////////////////////////////////////////
