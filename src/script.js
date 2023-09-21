@@ -461,6 +461,15 @@ window.addEventListener('resize', () => {
     renderer.setSize(window.innerWidth, window.innerHeight) // make it full screen  
 })
 
+// document.getElementById("Play-Btn").addEventListener("click", () => function(){ 
+//   console.log("Play-Btn");
+//   camera.lookAt(-10,10,0);
 
+// }());
+// document.getElementById("Stop-Btn").addEventListener("click", () => function(){ 
+//   console.log("Stop-Btn");
+
+//   camera.lookAt(0,0,0);
+// }());
 
 }//End Windows.onload
