@@ -6,4 +6,5 @@ body, html {
 }
 canvas{
 	vertical-align: bottom;
+	user-select: none;
 }
