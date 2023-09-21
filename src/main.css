@@ -8,3 +8,5 @@ canvas{
 	vertical-align: bottom;
 	user-select: none;
 }
+canvas:focus {outline: none;}
+canvas::selection{background-color:transparent}
