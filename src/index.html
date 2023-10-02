@@ -13,22 +13,27 @@
     top: 15px;left:20px;
     z-index: 100;color: #eee;font-size: .5em;
 }
-#Play-Btn{
+#btn-area{
     position: absolute;
+    display: flex;
     top: 50px;left:20px;
-    z-index: 100;font-size: 2em;
+}
+#Play-Btn{
+    z-index: 100;
+    font-size: min(4vw, 2em);
 }
 #Stop-Btn{
-    position: absolute;
-    top: 50px;left:140px;
-    z-index: 100;font-size: 2em;
+    z-index: 100;
+    font-size: min(4vw, 2em);
 }
 </style>
 </head>
 <body>
     <div id="gpu-text"></div>
-    <button id="Play-Btn">PLAY</button>
-    <button id="Stop-Btn">STOP</button>
+    <div id="btn-area">
+        <button id="Play-Btn">PLAY</button>
+        <button id="Stop-Btn">STOP</button>
+    </div> 
     <!--グラフィックス-->
     <canvas id="MyCanvas"></canvas>
 </body>
