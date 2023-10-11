@@ -457,7 +457,7 @@ window.addEventListener('resize', () => {
     camera.aspect = window.innerWidth / window.innerHeight
     camera.updateProjectionMatrix()
 
-    renderer.setPixelRatio(Math.min(PixelRation, 2.0)) //set pixel ratio
+    renderer.setPixelRatio(Math.min(window.devicePixelRatio, 2.0)) //set pixel ratio
     renderer.setSize(window.innerWidth, window.innerHeight) // make it full screen  
 })
 
