@@ -13,6 +13,11 @@ import { DRACOLoader } from 'three/examples/jsm/loaders/DRACOLoader.js'
 import Vertex from "./vertex.glsl";
 import Fragment from "./fragment.glsl";
 
+import GUI, { FunctionController } from 'lil-gui';
+const gui = new GUI({width:180});
+gui.domElement.id = 'gui';
+gui.close();
+
 window.onload = function(){
 /////////////////////////////////////////////////////////////////////////
 ///// TextAlive-Api
@@ -461,6 +466,30 @@ window.addEventListener('resize', () => {
     renderer.setSize(window.innerWidth, window.innerHeight) // make it full screen  
 })
 
+const params = {						  
+  myVisibleBoolean1: true,
+  myVisibleBoolean2: false,
+  //
+  valueA: 0.0, //
+  valueB: 0.0, //
+};
+	
+gui.add( params, 'myVisibleBoolean1').name('helper').listen()
+.listen().onChange( function( value ) { 
+  if( value == true ){
+    // axesHelper.visible = value;
+    // gridHelperB.visible = value;
+  }else{
+    // axesHelper.visible = value;
+    // gridHelperB.visible = value;
+  }
+});
+
+// gui.add( params, 'valueA', -0.66, 1.34 ).step( 0.01 ).name('X1').listen().listen().onChange( function( value ) { 
+//   //cube1.position.set(-0.34 ,0.34, 0);
+//   cube1.position.x = -0.34 + value;
+// });
+	
 // document.getElementById("Play-Btn").addEventListener("click", () => function(){ 
 //   console.log("Play-Btn");
 //   camera.lookAt(-10,10,0);
