@@ -290,7 +290,7 @@ const renderer = new THREE.WebGLRenderer({
   canvas:document.getElementById("MyCanvas"),
   alpha:true,
   antialias: true,
-  preserveDrawingBuffer: true,//bloomのautoClearと併用
+  preserveDrawingBuffer: false,//bloomのautoClearと併用
 });
 renderer.setPixelRatio(Math.min(PixelRation, 2.0)) //set pixel ratio
 renderer.setSize(window.innerWidth, window.innerHeight) // make it full screen
@@ -338,6 +338,15 @@ Object.assign(stats.dom.style, {'position': 'fixed','height': 'max-content',
 });
 
 /////////////////////////////////////////////////////////////////////////
+// function
+
+// Random の値
+function getRandomNum(min = 0, max = 0){
+  return Math.floor( Math.random() * (max - min + 1)) + min;
+}
+
+
+/////////////////////////////////////////////////////////////////////////
 ///// CAMERAS CONFIG
 
 /*
@@ -357,11 +366,24 @@ scene.add(camera)
 ///// CREATE ORBIT CONTROLS
 const controls = new OrbitControls(camera, renderer.domElement)
 
+/////////////////////////////////////////////////////////////////////////
+//// DEFINE ORBIT CONTROLS LIMITS
+function setOrbitControlsLimits(){
+  /*controls.enableDamping = true
+  controls.dampingFactor = 0.04
+  controls.minDistance = 35
+  controls.maxDistance = 60
+  controls.enableRotate = true
+  controls.enableZoom = true
+  controls.maxPolarAngle = Math.PI /2.5*/
+}
+
+setOrbitControlsLimits();
 
 /////////////////////////////////////////////////////////////////////////
 ///// CREATE Helper
-const size = 1000;
-const divisions = 100;
+const size = 250;
+const divisions = 10;
 
 const gridHelperA = new THREE.GridHelper( size, divisions );
 gridHelperA.position.set(0.0, 10.0, 0);
@@ -417,19 +439,6 @@ const plane = new THREE.Mesh(geometry, material);
 plane.position.set(0, 0, 0);
 scene.add( plane );
 
-/////////////////////////////////////////////////////////////////////////
-//// DEFINE ORBIT CONTROLS LIMITS
-function setOrbitControlsLimits(){
-    /*controls.enableDamping = true
-    controls.dampingFactor = 0.04
-    controls.minDistance = 35
-    controls.maxDistance = 60
-    controls.enableRotate = true
-    controls.enableZoom = true
-    controls.maxPolarAngle = Math.PI /2.5*/
-}
-
-setOrbitControlsLimits();
 
 /////////////////////////////////////////////////////////////////////////
 //// RENDER LOOP FUNCTION
