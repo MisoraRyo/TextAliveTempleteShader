@@ -349,13 +349,18 @@ function getRandomNum(min = 0, max = 0){
 /////////////////////////////////////////////////////////////////////////
 ///// CAMERAS CONFIG
 
-/*
-const cameraParam = { top: 1, bottom: -1, left: -1, right: 1, near: 0, far: -1};
-const camera = new THREE.OrthographicCamera( cameraParam.left, cameraParam.right,
-  cameraParam.top, cameraParam.bottom,
-  cameraParam.near, cameraParam.far,
-);
-*/
+// const aspect = window.innerWidth / window.innerHeight;
+// const width = 20;
+// const height = width / aspect;
+
+// const camera = new THREE.OrthographicCamera( 
+//   width / -2, //left
+//   width / 2, // right
+//   height / 2, // top
+//   height / -2, // bottom
+//   0.1,
+//   100
+// );
 
 const camera = new THREE.PerspectiveCamera(50, window.innerWidth / window.innerHeight, 1, 1000)
 
@@ -468,6 +473,14 @@ rendeLoop() //start rendering
 /////////////////////////////////////////////////////////////////////////
 ///// MAKE EXPERIENCE FULL SCREEN
 window.addEventListener('resize', () => {
+    // const aspect = window.innerWidth / window.innerHeight;
+    // const width = 20;
+    // const height = width / aspect;
+    // camera.left =  width / -2;
+    // camera.right =  width / 2;
+    // camera.top =  height / 2;
+    // camera.bottom =  height / -2;
+	
     camera.aspect = window.innerWidth / window.innerHeight
     camera.updateProjectionMatrix()
 
