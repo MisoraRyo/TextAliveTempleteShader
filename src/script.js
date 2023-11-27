@@ -358,8 +358,8 @@ function getRandomNum(min = 0, max = 0){
 //   width / 2, // right
 //   height / 2, // top
 //   height / -2, // bottom
-//   0.1,
-//   100
+//   1,
+//   1000
 // );
 
 const camera = new THREE.PerspectiveCamera(50, window.innerWidth / window.innerHeight, 1, 1000)
